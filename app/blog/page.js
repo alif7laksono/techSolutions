@@ -9,7 +9,7 @@ export default function Blog() {
     <div>
       <Header />
       <div className="bg-blue-100 text-center p-10 animate-fadeIn">
-      <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-subheading leading-normal">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-subheading leading-normal">
           Welcome to the TechSolutions Blog!
         </h1>
         <p className="mb-8 text-body md:w-2/3 p-3 text-md md:text-lg lg:text-lg mx-auto w-9/10 leading-relaxed">
@@ -23,11 +23,11 @@ export default function Blog() {
         <div className="max-w-5xl mx-auto">
           <div className="flex justify-between items-center mb-4">
             <div className="">
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">
-                Latest Articles
+              <h2 className="text-lg sm:text-2xl md:text-3xl font-semibold">
+                Featured Articles
               </h2>
             </div>
-            <div>
+            <div className="">
               <label htmlFor="search" className="sr-only">
                 Search
               </label>
