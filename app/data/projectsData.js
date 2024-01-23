@@ -1,0 +1,58 @@
+const projectsData = [
+  {
+    name: "Project 1",
+    description: "A web application for task management",
+    technologies: ["React"],
+    link: "https://example.com/project1",
+    image: "projects/project-1.jpg",
+    releaseDate: "2022-02-15",
+    teamMembers: ["John Doe", "Jane Smith"],
+  },
+  {
+    name: "Project 2",
+    description: "A mobile app for budget tracking",
+    technologies: ["React", "MongoDB"],
+    link: "https://example.com/project2",
+    image: "projects/project-2.jpg",
+    releaseDate: "2022-05-20",
+    teamMembers: ["Alice Johnson", "Bob Anderson"],
+  },
+  {
+    name: "Project 3",
+    description: "An e-commerce website with payment integration",
+    technologies: ["Express", "MongoDB"],
+    link: "https://example.com/project3",
+    image: "projects/project-3.jpg",
+    releaseDate: "2022-08-10",
+    teamMembers: ["Charlie Brown", "Diana Miller"],
+  },
+  {
+    name: "Project 4",
+    description: "A data visualization dashboard",
+    technologies: ["MongoDB"],
+    link: "https://example.com/project4",
+    image: "projects/project-2.jpg",
+    releaseDate: "2022-08-10",
+    teamMembers: ["Charlie Brown", "Diana Miller"],
+  },
+  {
+    name: "Project 5",
+    description: "A weather app with real-time updates",
+    technologies: ["React", "Node.js"],
+    link: "https://example.com/project5",
+    image: "projects/project-1.jpg",
+    releaseDate: "2022-08-10",
+    teamMembers: ["Charlie Brown", "Diana Miller"],
+  },
+  {
+    name: "Project 6",
+    description: "A content management system with user authentication",
+    technologies: ["Express", "MongoDB"],
+    link: "https://example.com/project6",
+    image: "projects/project-3.jpg",
+    releaseDate: "2022-08-10",
+    teamMembers: ["Charlie Brown", "Diana Miller"],
+  },
+];
+
+export default projectsData;
