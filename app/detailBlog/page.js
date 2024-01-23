@@ -15,6 +15,7 @@ import {
   AiFillGift,
 } from "react-icons/ai";
 import latestArticles from "../data/latestArticles";
+import commentsData from "../data/commentsData";
 
 import HeaderBlog from "../components/HeaderBlog";
 import Footer from "../components/Footer";
@@ -24,10 +25,12 @@ export default function DetailBlog() {
   const article = articleData[0];
 
   return (
-    <div>
+    <div className="bg-gray-50">
       <HeaderBlog />
-      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h1 className="text-3xl font-bold mb-4">{article.title}</h1>
+      <div className=" max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <h1 className="text-5xl font-bold mb-4 text-center leading-relaxed">
+          {article.title}
+        </h1>
         <div className="flex items-center space-x-2 mb-4 justify-between">
           <div className="flex justify-center items-center space-x-2">
             <AiOutlineUser className="text-gray-500" />
@@ -61,7 +64,7 @@ export default function DetailBlog() {
         <div>
           <img src={article.img} alt={article.title} />
         </div>
-        <div className="my-5">
+        <div className="my-5 opacity-80">
           <h2 className="text-2xl font-bold mb-2"></h2>
           <p className="text-gray-700">{article.summary}</p>
 
@@ -103,18 +106,19 @@ export default function DetailBlog() {
               mobile applications that not only meet the current demands but
               also anticipate the needs of the future.
             </p>
-            <div className="flex items-center justify-center sm:justify-start mt-5">
-              <span className="mr-2 bg-blue-500 hover:bg-blue-600 transform hover:scale-105 transition-all duration-200 ease-in-out rounded-full px-3 py-1 text-white cursor-pointer">
+            <div className="flex items-center justify-center sm:justify-start my-7">
+              <span className="mr-2 bg-gray-200 font-semibold text-gray-900 transform hover:scale-105 transition-all duration-200 ease-in-out rounded-full px-3 py-1 cursor-pointer">
                 Technology
               </span>
-              <span className="mr-2 bg-green-500 hover:bg-green-600 transform hover:scale-105 transition-all duration-200 ease-in-out rounded-full px-3 py-1 text-white cursor-pointer">
+              <span className="mr-2 bg-gray-200 font-semibold text-gray-900 transform hover:scale-105 transition-all duration-200 ease-in-out rounded-full px-3 py-1 cursor-pointer">
                 Mobile App
               </span>
-              <span className="mr-2 bg-purple-500 hover:bg-purple-600 transform hover:scale-105 transition-all duration-200 ease-in-out rounded-full px-3 py-1 text-white cursor-pointer">
+              <span className="mr-2 bg-gray-200 font-semibold text-gray-900 transform hover:scale-105 transition-all duration-200 ease-in-out rounded-full px-3 py-1 cursor-pointer">
                 Software Development
               </span>
             </div>
 
+            {/* leave a comment section */}
             <hr className="my-5" />
             <h2 className="text-2xl font-bold mb-2">Leave a Comment</h2>
 
@@ -140,6 +144,7 @@ export default function DetailBlog() {
                 </div>
               </div>
             </div>
+
             {/* <div className="flex justify-between items-center mt-5">
               <h3 className="text-xl font-bold">2 Comments</h3>
               <div className="relative">
@@ -158,77 +163,116 @@ export default function DetailBlog() {
                       aria-labelledby="options-menu"
                     >
                       <button
-                        className="w-full text-right block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                        className="w-full text-right block px-4 py-2 text-sm text-gray-700 transition-colors duration-200 hover:bg-blue-500 hover:text-white"
                         role="menuitem"
                       >
                         Newest
                       </button>
                       <button
-                        className="w-full text-right block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                        className="w-full text-right block px-4 py-2 text-sm text-gray-700 transition-colors duration-200 hover:bg-blue-500 hover:text-white"
                         role="menuitem"
                       >
-                        Latest
+                        Oldest
                       </button>
                     </div>
                   </div>
                 )}
               </div>
             </div> */}
+
+            {/* comment section */}
+            {/* <hr className="my-5" />
+            <h2 className="text-2xl font-bold mb-2">Comments</h2>
+            {commentsData.map((comment) => (
+              <div
+                key={comment.id}
+                className="p-4 border-2 rounded-md border-gray-300 shadow-sm mb-4"
+              >
+                <h3 className="font-bold text-lg mb-2">{comment.author}</h3>
+                <p className="text-gray-700">{comment.text}</p>
+                <p className="text-sm text-gray-500">{comment.date}</p>
+              </div>
+            ))} */}
           </div>
         </div>
       </div>
-      
-      {/* LATEST POST SECTION */}
-      <div className="flex justify-between items-center mb-4 mx-16">
-        <div className="">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">
-            Latest Articles
-          </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-            {latestArticles.map((article) => (
-              <div
-                key={article.id}
-                className="bg-white p-4 rounded shadow transition duration-500 ease-in-out transform hover:-translate-y-1 cursor-pointer hover:scale-110"
-              >
-                <img
-                  src={article.img}
-                  alt={article.title}
-                  className="w-full h-64 object-cover rounded mb-4"
-                />
-                <div className="flex items-center justify-between text-sm text-gray-500 my-3">
-                  <div className="flex items-center">
-                    <AiOutlineUser className="mr-1" />
-                    <p className="hover:text-hover mr-2 capitalize">
-                      {article.publishedBy}
-                    </p>
-                  </div>
-                  <p className="hover:text-hover">{article.category}</p>
+      {/* Featured Posts Section */}
+      <div className="md:w-3/4 sm:w-4/5 w-full mx-auto">
+        <h2 className="text-4xl font-bold font-heading mb-4 text-center">
+          Featured Posts
+        </h2>
+        <div className="p-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+          {latestArticles.slice(0, 3).map((article) => (
+            <div
+              key={article.id}
+              className="bg-gray-100 p-4 rounded shadow transition duration-500 ease-in-out transform hover:-translate-y-1 cursor-pointer"
+            >
+              <img
+                src={article.img}
+                alt={article.title}
+                className="w-full h-64 object-cover rounded mb-4 transition duration-500 ease-in-out transform hover:scale-110"
+              />
+              <div className="flex items-center justify-between text-sm text-gray-500 my-3">
+                <div className="flex items-center">
+                  <AiOutlineUser className="mr-1" />
+                  <p className="hover:text-hover mr-2 capitalize">
+                    {article.publishedBy}
+                  </p>
+                </div>
+                <p className="hover:text-hover">{article.category}</p>
+              </div>
+
+              <h6 className="font-bold mb-2">{article.title}</h6>
+              <p className="mb-2 line-clamp-2 text-sm">{article.summary}</p>
+
+              <div className="flex justify-between items-center">
+                <div>
+                  <a
+                    href={article.url}
+                    className="text-blue-600 hover:underline text-sm"
+                  >
+                    Read More
+                  </a>
                 </div>
 
-                <h6 className="font-bold mb-2">{article.title}</h6>
-                <p className="mb-2 line-clamp-2 text-sm">{article.summary}</p>
-
-                <div className="flex justify-between items-center">
-                  <div>
-                    <a
-                      href={article.url}
-                      className="text-blue-600 hover:underline text-sm"
-                    >
-                      Read More
-                    </a>
-                  </div>
-
-                  <div className="flex justify-between items-center space-x-1 text-sm">
-                    <span className="">24</span>
-                    <AiOutlineHeart className="text-red-500 hover:text-red-600 cursor-pointer" />
-                  </div>
+                <div className="flex justify-between items-center space-x-1 text-sm">
+                  <span className="">24</span>
+                  <AiOutlineHeart className="text-red-500 hover:text-red-600 cursor-pointer" />
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
+
+      {/* Newsletter and stay updated */}
+      <div className="w-full sm:w-3/4 mx-auto mt-8 mb-8 bg-gray-100 p-8 flex flex-col lg:flex-row items-center justify-between">
+        <div className="w-2/5 sm:w-1/2 mb-4 lg:mb-0">
+          <p className="font-heading text-xl sm:text-2xl md:text-2xl font-semibold text-center md:text-center lg:text-left">
+            Subscribe to our newsletter
+          </p>
+          <p className="font-heading text-xl sm:text-2xl md:text-2xl font-semibold text-center md:text-center lg:text-left">
+            and stay updated.
+          </p>
+        </div>
+
+        <form className="w-full lg:w-3/5 flex flex-col lg:flex-row items-center space-x-0 lg:space-x-2">
+          <input
+            type="email"
+            placeholder="Write your email here"
+            className="mb-4 lg:mb-0 px-4 py-2 border border-gray-300 rounded-md text-sm text-body opacity-50 w-full lg:w-4/5"
+          />
+
+          <button
+            type="submit"
+            className="px-4 py-2 bg-blue-600 text-white rounded-md text-sm w-full lg:w-1/5"
+          >
+            Subscribe
+          </button>
+        </form>
+      </div>
+
       <Footer />
     </div>
   );

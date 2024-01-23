@@ -22,12 +22,12 @@ export default function Blog() {
       <div className="p-8 min-h-screen animate-slideInLeft">
         <div className="max-w-5xl mx-auto">
           <div className="flex justify-between items-center mb-4">
-            <div className="">
+            <div className="w-3/5">
               <h2 className="text-lg sm:text-2xl md:text-3xl font-semibold">
                 Featured Articles
               </h2>
             </div>
-            <div className="">
+            <div className="w-2/5">
               <label htmlFor="search" className="sr-only">
                 Search
               </label>
@@ -35,7 +35,7 @@ export default function Blog() {
                 type="search"
                 id="search"
                 placeholder="Search articles..."
-                className="px-4 py-2 border border-gray-300 rounded-md text-sm text-body opacity-50"
+                className="px-4 py-2 border border-gray-300 rounded-md text-sm text-body opacity-50 w-full"
               />
             </div>
           </div>
@@ -43,12 +43,12 @@ export default function Blog() {
             {latestArticles.map((article) => (
               <div
                 key={article.id}
-                className="bg-white p-4 rounded shadow transition duration-500 ease-in-out transform hover:-translate-y-1 cursor-pointer hover:scale-110"
+                className="bg-white p-4 rounded shadow transition duration-500 ease-in-out transform hover:-translate-y-1 cursor-pointer"
               >
                 <img
                   src={article.img}
                   alt={article.title}
-                  className="w-full h-64 object-cover rounded mb-4"
+                  className="w-full h-64 object-cover rounded mb-4 transition duration-500 ease-in-out transform hover:scale-110"
                 />
                 <div className="flex items-center justify-between text-sm text-gray-500 my-3">
                   <div className="flex items-center">

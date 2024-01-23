@@ -69,14 +69,14 @@ export default function Projects() {
               <div
                 key={project.name}
                 onClick={() => handleProjectClick(project)}
-                className="p-4 rounded shadow flex flex-col justify-between transform transition-transform duration-500 hover:scale-105 cursor-pointer"
+                className="p-4 rounded shadow flex flex-col justify-between transition-transform duration-500 cursor-pointer"
                 style={{ backgroundColor: "white", color: "black" }}
               >
                 <div>
                   <img
                     src={project.image}
                     alt={project.name}
-                    className="w-full h-32 object-cover rounded mb-4"
+                    className="w-full h-32 object-cover rounded mb-4 transform transition-transform duration-500 hover:scale-105"
                   />
                   <h3 className="text-lg font-bold">{project.name}</h3>
                   <p className="text-gray-600">{project.description}</p>

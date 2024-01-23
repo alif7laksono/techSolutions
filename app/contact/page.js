@@ -12,7 +12,6 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your form submission logic here
     console.log("Form submitted with data:", {
       name: e.target.name.value,
       email: e.target.email.value,
@@ -43,7 +42,7 @@ export default function Contact() {
           Let's start a conversation
         </h1>
         <form
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8"
           onSubmit={handleSubmit}
         >
           <div className="mb-4">
@@ -122,7 +121,7 @@ export default function Contact() {
               required
             ></textarea>
           </div>
-          <div className="">
+          <div className="col-span-2">
             <button
               type="submit"
               className="bg-blue-500 text-white py-2 px-8 rounded-md hover:bg-blue-700 transition duration-300"

@@ -52,7 +52,7 @@ export default function Header() {
         </div>
 
         <div className="flex items-center space-x-3">
-          <button
+          {/* <button
             onClick={() => setIsOpen(!isOpen)}
             className={`font-heading text-md hover:text-green-900 transition duration-200 ease-in-out relative ${
               isOpen ? "" : "sm:hidden"
@@ -66,6 +66,14 @@ export default function Header() {
             className="sm:hidden md:flex"
           >
             {darkMode ? <FaSun /> : <FaMoon />}
+          </div> */}
+          <div className="font-heading text-lg">
+            <Link
+              href="/Page404"
+              className="border-b-2 border-transparent hover:border-current pb-1 cursor-pointer hover:text-gray-900 transition duration-200 ease-in-out"
+            >
+              404 Page
+            </Link>
           </div>
         </div>
       </div>

@@ -1,1 +1,19 @@
-node_modules
+# dependencies
+/node_modules
+
+# Next.js build output
+/.next
+
+# dotenv environment variables file
+.env
+
+# log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE - VSCode
+.vscode
+
+# Next.js cache files
+.next/cache
