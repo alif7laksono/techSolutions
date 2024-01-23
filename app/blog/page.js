@@ -24,7 +24,7 @@ export default function Blog() {
           <div className="flex justify-between items-center mb-4">
             <div className="">
               <h2 className="text-lg sm:text-2xl md:text-3xl font-semibold">
-                Featured Articles Articles
+                Featured Articles
               </h2>
             </div>
             <div className="">
